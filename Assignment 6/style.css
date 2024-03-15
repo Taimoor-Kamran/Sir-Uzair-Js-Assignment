@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding : 0px;
+    box-sizing : border-box;
+}
+
+body{
+    background-color: green;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table{
+    width: 700px;
+    height: 100px;
+}
+th{
+    height: 50px;
+
+}
+tr{
+    height: 50px;
+    text-align: center;
+}
+td{
+    color: #fff;
+}
