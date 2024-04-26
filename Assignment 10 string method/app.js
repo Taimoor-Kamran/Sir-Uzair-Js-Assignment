@@ -100,6 +100,29 @@
 // console.log(typeof(b))
 // console.log(b)
 
+// 13.
+
+function validateUsername(userName){
+    let pattern = /[!@.,]/
+    if(pattern.test(userName)){
+        return false;
+    }else{
+        return true
+    }
+}
+
+function main(){
+    let userName = prompt("Enter Your UserName")
+    if(validateUsername(userName)){
+        alert("UserName Contains special symbol. Please enter a valid username")
+    }else{
+        alert("UserName is Valid")
+    }
+}
+
+main()
+
+
 
 // 16.
 
