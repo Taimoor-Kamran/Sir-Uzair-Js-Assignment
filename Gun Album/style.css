@@ -1,0 +1,21 @@
+.contianer{
+    width: 500px;
+    height: auto;
+    margin: 0px auto;
+    padding-top: 120px;
+}
+.contianer img{
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+}
+.smalling{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.smalling img{
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+}
