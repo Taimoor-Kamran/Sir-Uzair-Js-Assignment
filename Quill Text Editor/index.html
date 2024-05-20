@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quill Text Editor</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <select id="dropDown">
+        <option id="first1">Normal</option>
+        <option value="first2">SubHeaing</option>
+        <option value="first3">Heading</option>
+      </select>
+      <select id="dropDown1">
+        <option value="second1">Sailec Light</option>
+        <option value="second2">Sofia Pro</option>
+        <option value="second3">Salbo 13px</option>
+        <option value="second4">Roboto Slab</option>
+        <option value="second5">Inconsolota</option>
+        <option value="second6">Ubuntu Mono</option>
+      </select>
+      <h4 id="bold"><b>B</b></h4>
+      <h4 id="italic"><i>I</i></h4>
+      <h4 id="underline"><u>U</u></h4>
+      <i id="left" class="fa-solid fa-align-left"></i>
+      <i id="justify" class="fa-solid fa-align-justify"></i>
+      <i id="right" class="fa-solid fa-align-right"></i>
+    </nav>
+    <h1 id="editor">Quill Rich Text Editor</h1>
+    <div class="center">
+    <p id="para">
+      Quill is a free, open source WYSIWYG editor built for the modern web. With
+      its <br />
+      modular architecture and expressive API, it is completely customizable to
+      fit <br />
+      any need.
+    </p>
+  </div>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </body>
+</html>
