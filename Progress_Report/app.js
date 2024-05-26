@@ -22,5 +22,6 @@ for(var i = 1; i < table.rows.length; i++)
     }
 
     var a = Data[1][2] + Data[1][3] + Data[1][4] + Data[1][5]
-
-    table.rows[2].cells[7].innerHTML = Data[0][7];
+    console.log(a)
+    table.rows[2].cells[7].innerText = Data[1].splice[0, 7, a];
+    
