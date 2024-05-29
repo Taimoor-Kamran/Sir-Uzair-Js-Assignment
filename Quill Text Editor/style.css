@@ -10,60 +10,45 @@ body{
     justify-content: center;
     align-items: center;
 }
-nav{
-
-    height: 60px;
+.container{
     width: 100%;
-    display: flex;
-    align-items: center;
+    height: 50px;
     background-color: green;
-    justify-content: center;
-    gap: 30px;    
-}
-#dropDown{
-    border: none;
-}
-#dropDown1{
-    border: none;
-}
-#bold{
-    cursor: pointer;
-}
-
-#para{
-    text-align: center;
-    margin-top: 30px;
-    font-size: 25px;
-}
-#italic{
-    cursor: pointer;
-}
-#underline{
-    cursor: pointer;
-}
-#left{
-    cursor: pointer;
-}
-#justify{
-    cursor: pointer;
-}
-#right{
-    cursor: pointer;
-}
-.center{
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
+.action_btn{
+    width: 70px;
+    height: 25px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+#font-family{
+    border: none;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+}
+#font-size{
+    border: none;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+}
+#text{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
 h1{
     text-align: center;
-    margin-top: 120px;
-    cursor: pointer;    
-}
-#dropDown{
-    cursor: pointer;
-}
-#dropDown > #first{
-    cursor: pointer;
+    margin-top: 70px;
+    font-size: 40px;
+    color: green;
 }
