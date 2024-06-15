@@ -208,43 +208,17 @@ let products = [
 ];
 
 let allProducts = document.getElementById("all-products");
-let cartNumber = document.getElementById('cart-number')
-for (let i = 0; i < products.length; i++) {
-console.log("products==>", products[i]);
-
-  var productElement = `<div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img
-            alt="ecommerce"
-            class="object-cover object-center w-full h-full block"
-            src=${products[i].image}
-          />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-            ${products.category}
-          </h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">
-            ${products[i].title}
-          </h2>
-          <div class = 'flex justify-between items-center w-full'>
-          <p class="mt-1">$16.00</p>
-          <button onclick= "addToCart(this)" class= "btn outline border-primary px-4">Add
-        </div>
-      </div>
-    </div>
-  </div>
-
-`;
-
-allProducts.innerHTML += productElement;
-}
-
-
-function addToCart(element){
-    if(element.innerText == "Ädded"){
-        cartNumber.innerText
-    }
+console.log(allProducts)
+for (let i = 0; i < products.lenght; i++) {
+  let productElement = `<div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+              <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="${products[i].image}">
+            </a>
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${products[i].category}</h3>
+              <h2 class="text-gray-900 title-font text-lg font-medium">${products[i].description}</h2>
+              <p class="mt-1">$${products[i].price}</p>`;
+              
+              allProducts.innerHTML += productElement 
+              
 }
