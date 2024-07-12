@@ -1,9 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
-
 import { getFirestore,
   collection,
-  addDoc 
+  addDoc,
+  getDocs,
+  doc,
+  deleteDoc,
+  updateDoc,
   } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
 
@@ -21,24 +24,58 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-async function addNumberToDb(){
-  try {
-    
-    let numbersCollection = collection(db, 'numbers')
-    const docRef = await addDoc(numbersCollection, {
-      number: Math.round(Math.random = 1000000)
-    })
+// console.log(db)
 
-    console.log(docRef)
-    // const docRef = await addDoc(collection(db, "users"), {
-    //   first: "Ada",
-    //   last: "Lovelace",
-    //   born: 1815
-    // });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-  
+const numbers_list = document.getElementById("numbers_list")
+const add_number = document.getElementById("add_number")
+
+const numbersCollection = collection(db, "number")
+
+getNumbersFromDb()
+
+add_number.addEventListener('click', async ()=>{
+const number = Math.round(Math.random() * 10000)
+console.log(number)
+try {
+  add_number.disabled = true;
+  const docRef = await addDoc(numbersCollection, {
+    number,
+  });
+  add_number.disabled = false
+  getNumbersFromDb()
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  add_number.disabled = false;
+  console.error("Error adding document: ", e);
 }
+});
 
+async function getNumbersFromDb() {
+  const querySnapshot = await getDocs(numbersCollection);
+  numbers_list.innerHTML = "";
+  querySnapshot.forEach((doc) => {
+    var obj = doc.data();
+    const li = `<li id= ${doc.id}> <b>${obj.number}</b>  <button> Edit </button> <button> Delete </button>  </li>`;
+    numbers_list.innerHTML += li;
+  });
+
+  numbers_list.childNodes.forEach((node) => {
+    node.children[1].addEventListener("click", async function () {
+      const docRef = doc(db, "number", this.parentNode.id);
+      const newNumber = prompt("New Number");
+
+      await updateDoc(docRef, {
+        number: newNumber,
+      });
+      console.log("Document update hogya he");
+      getNumbersFromDb();
+    });
+
+    node.children[2].addEventListener("click", async function () {
+      const docRef = doc(db, "number", this.parentNode.id);
+      await deleteDoc(docRef);
+      console.log("Doc deleted");
+      getNumbersFromDb();
+    });
+  });
+}
