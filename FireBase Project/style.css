@@ -1,0 +1,144 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth_container{
+    border: 2px solid black;
+    border-radius: 30px ;
+    padding: 10px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#auth_container .creat{
+    align-items: center;
+    justify-self: center;
+}
+
+#create_acc{
+    text-align: center;
+    color: white;   
+}
+#signUp_email{
+    display: grid;
+    place-items: center;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+
+#signUp_password{
+    width: 300px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+
+#signUp_btn{
+
+    width: 150px;
+    display: block;
+    margin: auto;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+#signUp_btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+#signIn_acc{
+    text-align: center;
+    color: #fff;
+}
+
+#signIn_email{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;   
+}
+
+#signIn_password{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;   
+}
+
+#signIn_btn{
+    width: 150px;
+    border: none;
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    display: block;
+    margin: auto
+}
+#signIn_btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+#user_container{
+    display: inline-block;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.nav h1{
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+}
+.nav #user_email{
+    font-style: italic;
+}
+.nav #logout_btn{
+    margin: auto;
+    display: block;
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav #logout_btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+.header #car_img{
+    display: block;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+}
+.header #save_file{
+    width: 100px;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.header #save_file:hover{
+    background-color: #000;
+    color: #fff;   
+}
