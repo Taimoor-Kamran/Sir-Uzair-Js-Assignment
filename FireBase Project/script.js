@@ -39,7 +39,7 @@
 const storage = getStorage(app);
 
 const carsCollection = collection(db, "cars");
-console.log("storage=>", storage);
+// console.log("storage=>", storage);
 
 const car_img = document.getElementById("car_img");
 const save_file = document.getElementById("save_file");
