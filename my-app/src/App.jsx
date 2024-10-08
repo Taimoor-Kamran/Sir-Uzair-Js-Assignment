@@ -1,4 +1,3 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Button from "./components/Button";
@@ -9,30 +8,30 @@ import Hero from "./components/Hero";
 import Features from "./components/Features"
 import Footer from "./components/Footer";
 
-// import './App.css'
 
-function App() {
-  console.log(landingPageData);
-  const { header, hero, features, testimonials } = landingPageData;
-  const user = {
-    isLogin : true,
-  }
+
+function App(){
+const {header, hero, features, testimonials} = landingPageData;
+
+const user = {
+  isLogin : true
+}
 
   return (
-    <div>
-    <Header header={header} user={user}/>
+    <>
 
-    <Hero hero={hero}/>
+
+    <Header header={header} user={user} />
+
+    <Hero hero={hero} />
 
     <Features features={features} />
 
-    <Testimonials testimonials={testimonials} />
+    <Testimonials  testimonials={testimonials}/>
 
-  <Footer header={header} />         
-
-
-    </div>
-  );
+    <Footer header={header} />
+    </>
+  )
 }
 
-export default App;
+export default App
