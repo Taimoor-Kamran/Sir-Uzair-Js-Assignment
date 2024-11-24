@@ -12,7 +12,7 @@ const Header = () => {
       <Link href={"/blogs"}>
         <h1 className="font-medium hover:underline cursor-pointer">Blogs</h1>
       </Link>
-      <Link href={"/blogs"}>
+      <Link href={"/users"}>
         <h1
           className={`font-medium hover:underline cursor-pointer ${
             pathname.includes("blogs") ? "underline font-bold" : ""

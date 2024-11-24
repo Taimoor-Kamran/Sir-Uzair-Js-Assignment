@@ -15,7 +15,7 @@ const Navbar = () => {
               width={100}
               height={100}
             ></Image>
-            <span className="ml-3 text-xl">Tailblocks</span>
+            <span className="ml-3 text-xl">TAIMOOR</span>
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <Link href={"/"} className="mr-5 hover:text-blue-600">

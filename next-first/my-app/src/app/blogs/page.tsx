@@ -1,27 +1,52 @@
+import prisma from "@/lib/db";
 import Link from "next/link";
+import { revalidatePath } from "next/cache";
+
+export const revalidate = 60;
+export const dynamicParams = true;
 
 const Blogs = async () => {
-  let news: any = await fetch(
-    "https://api.thenewsapi.com/v1/news/top?api_token=4kg9t6R9h2j1gFnP6oerJz0h6BHr9ZebTXA3GUl6&locale=us&limit=3"
-  );
-  news = await news.json();
+  let news: any = await prisma.blog.findMany();
+
+  async function addBlog(formData: any) {
+    "use server";
+    const blog = {
+      title: formData.get("title"),
+      description: formData.get("description"),
+    };
+    await prisma.blog.create({ data: blog });
+    revalidatePath("/blogs");
+  }
 
   return (
     <>
       <div>
         {news?.data.map((data: any) => (
           <Link
-            href={`/blogs/${data.uuid}`}
-            key={data.uuid}
+            href={`/blogs/${data.id}`}
+            key={data.id}
             className="border m-2 rounded p-4 flex"
           >
-            <img src={data.image_url} className="h-20 w-20 rounded" />
-            <div>
-              <h1>{data?.title}</h1>
-              <h1>{data?.description}</h1>
+            <div className="ml-2">
+              <h1 className="font-bold">{data?.title}</h1>
+              <h1 className="my-2">{data?.desc}</h1>
             </div>
           </Link>
         ))}
+
+        <form action={addBlog} className="flex gap-2 mx-auto">
+          <input
+            className={"border p-2 mx-2"}
+            placeholder={"Title"}
+            name={"title"}
+          />
+          <input
+            className={"border p-2 mx-2"}
+            placeholder={"Description"}
+            name={"description"}
+          />
+          <input className={"bg-pink-300 p-2 px-4 rounded text-white"} type={"submit"} />
+        </form>
       </div>
     </>
   );
